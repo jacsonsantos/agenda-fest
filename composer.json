@@ -1,0 +1,13 @@
+{
+	"autoload":{
+		"psr-4":{
+			"":"src/"
+		}
+	},
+	"authors":[
+		{
+		"name":"Jacson Santos",
+		"email":"jacsonk47@gmail.com"
+		}
+	]
+}
