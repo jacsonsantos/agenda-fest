@@ -21,8 +21,11 @@ class Contato implements MethodInferface
 		'email' 	=> (string) $email);
 		return $this;
 	}
-
-	public function run()
+	public function getValue()
+	{
+		return $this->contact;
+	}
+	public function runValue()
 	{
 		$result = $this->pdo->prepare("INSERT INTO ".$this->table." (fixo,celular,email) VALUES (:fixo,:celular,:email)");
 		$result->bindValue(":fixo",$this->contact['fixo'],\PDO::PARAM_STR);
@@ -38,5 +41,5 @@ class Contato implements MethodInferface
 		$result->bindValue(":email",$this->contact['email'],\PDO::PARAM_STR);
 		$result->bindValue(":id",(int) $id,\PDO::PARAM_INT);
 		return $result->execute();
-	}		
+	}
 }
